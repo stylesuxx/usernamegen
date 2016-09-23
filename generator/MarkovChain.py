@@ -3,17 +3,20 @@ import random
 
 class MarkovChain:
     def __init__(self, words, size):
-        self.words = words
         self.size = size
         self.starts = map(lambda word: word[:self.size], words)
-        self.lookup = {}
+        self.lookup = self._buildLookupTable(words)
 
-        for word in self.words:
+    def _buildLookupTable(self, words):
+        lookup = {}
+        for word in words:
             for key, val in self._tuples(word):
-                if key in self.lookup:
-                    self.lookup[key].append(val)
+                if key in lookup:
+                    lookup[key].append(val)
                 else:
-                    self.lookup[key] = [val]
+                    lookup[key] = [val]
+
+        return lookup
 
     def _tuples(self, word):
         if len(word) < self.size - 1:
