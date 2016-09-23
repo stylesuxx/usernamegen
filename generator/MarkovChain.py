@@ -40,7 +40,7 @@ class MarkovChain:
 
         return word
 
-
+'''
 def main():
     import argparse
     words = []
@@ -66,3 +66,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+'''

@@ -3,17 +3,10 @@ import random
 
 
 class Generator():
-    def __init__(self, path, size, min):
-        self.path = path
+    def __init__(self, words, size, min):
         self.size = size
         self.min = min
         self.formatters = []
-
-        file = open(path)
-        file.seek(0)
-        data = file.read()
-        words = data.split("\n")
-        file.close()
 
         self.markov = MarkovChain(words, size)
 
@@ -44,7 +37,7 @@ class Generator():
 
         return formatter(words)
 
-
+'''
 def main():
     import argparse
     from Formatter import (Join, Underscore, Capitalize, CapitalizeExceptFirst,
@@ -70,10 +63,17 @@ def main():
         {'format': CapitalizeAppendNumber().format, 'weight': 1}
     ]
 
-    generator = Generator(args.path, args.prev_num, args.min)
+    file = open(path)
+    file.seek(0)
+    data = file.read()
+    words = data.split("\n")
+    file.close()
+
+    generator = Generator(args.path, words, args.prev_num, args.min)
     generator.setFormatters(formatters)
     for i in range(0, args.n):
         print generator.getString()
 
 if __name__ == '__main__':
     main()
+'''
