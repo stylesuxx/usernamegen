@@ -1,5 +1,6 @@
 # usernamegen
 > Genrate usernames with a Markov chain based on a wordlist
+[![Build Status](https://travis-ci.org/stylesuxx/usernamegen.svg?branch=master)](https://travis-ci.org/stylesuxx/usernamegen)
 
 ## Usage library
 
