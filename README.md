@@ -1,10 +1,14 @@
 # usernamegen
 > Genrate usernames with a Markov chain based on a wordlist
+
 [![Build Status](https://travis-ci.org/stylesuxx/usernamegen.svg?branch=master)](https://travis-ci.org/stylesuxx/usernamegen)
 
 ## Usage library
 
 ## Usage scripts
+After installation there will be two script available:
+
+#### markov
 ```bash
 usage: markov [-h] [-p PREV] [-n N] WORDLIST
 
@@ -19,6 +23,7 @@ optional arguments:
   -n N        Amount of new words to generate
 ```
 
+#### username
 ```bash
 usage: username [-h] [-p PREV] [-n N] [-m MIN] WORDLIST
 
