@@ -14,7 +14,7 @@ class TestGenerator:
 
     def test_check_min_length(self):
         minLength = 8
-        words = ['foo', 'foobar', 'foobarbla', 'foobarblafasel']
+        words = ['f', 'foo', 'foobar', 'foobarbla', 'foobarblafasel']
         formatters = [{'format': Formatter.Join().format, 'weight': 2}]
         generator = Generator.Generator(words, 3, minLength)
         generator.setFormatters(formatters)
