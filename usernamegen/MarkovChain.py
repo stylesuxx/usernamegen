@@ -35,6 +35,8 @@ class MarkovChain:
                 key = key[1:] + next
                 next = random.choice(self.lookup[key])
         except KeyError:
+            print key
+            print '#####'
             pass
 
         return word
