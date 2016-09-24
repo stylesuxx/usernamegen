@@ -1,2 +1,2 @@
 from Formatter import (Join, Underscore, Capitalize, CapitalizeExceptFirst,
-                       AppendNumber, CapitalizeAppendNumber)
+                       AppendNumber, CapitalizeAppendNumber, Formatter)
