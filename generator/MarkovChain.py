@@ -39,31 +39,3 @@ class MarkovChain:
             pass
 
         return word
-
-'''
-def main():
-    import argparse
-    words = []
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('path', type=str, metavar='WORDLIST',
-                        help='File to use as basis for generating the words')
-    parser.add_argument('-p', type=int, dest='prev_num', default=3,
-                        help='Number of previous letters to base chain on')
-    parser.add_argument('-n', type=int, dest='n', default=5,
-                        help='Amount of generated words')
-    args = parser.parse_args()
-
-    file = open(args.path)
-    file.seek(0)
-    data = file.read()
-    words = data.split("\n")
-    file.close()
-
-    markov = MarkovChain(words, args.prev_num)
-    for i in range(0, args.n):
-        print markov.getWord()
-
-if __name__ == '__main__':
-    main()
-'''
