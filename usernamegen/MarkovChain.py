@@ -13,6 +13,7 @@ class MarkovChain:
             for key, val in self._tuples(word):
                 if key in lookup:
                     lookup[key].append(val)
+
                 else:
                     lookup[key] = [val]
 
@@ -35,8 +36,6 @@ class MarkovChain:
                 key = key[1:] + next
                 next = random.choice(self.lookup[key])
         except KeyError:
-            print key
-            print '#####'
             pass
 
         return word

@@ -4,15 +4,18 @@ import usernamegen
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    description = ('Generate usernames based on a wordlist and a Markov '
+                   'chain.')
+
+    parser = argparse.ArgumentParser(description=description)
     parser.add_argument('path', type=str, metavar='WORDLIST',
-                        help='File to use as basis for generating the words')
-    parser.add_argument('-p', type=int, dest='prev_num', default=3,
+                        help='Path to wordlist used for word generation')
+    parser.add_argument('-p', type=int, dest='prev', default=3,
                         help='Number of previous letters to base chain on')
     parser.add_argument('-n', type=int, dest='n', default=5,
-                        help='Amount of generated words')
+                        help='Amount of new words to generate')
     parser.add_argument('-m', type=int, dest='min', default=8,
-                        help='Minimum word length')
+                        help='Minimum username length')
     args = parser.parse_args()
 
     formatters = [
@@ -32,7 +35,7 @@ def main():
     words = data.split("\n")
     file.close()
 
-    gen = usernamegen.Generator(words, args.prev_num, args.min)
+    gen = usernamegen.Generator(words, args.prev, args.min)
     gen.setFormatters(formatters)
     for i in range(0, args.n):
         print gen.getString()
