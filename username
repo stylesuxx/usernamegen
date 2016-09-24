@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import argparse
-import generator
+import usernamegen
 
 
 def main():
@@ -16,13 +16,13 @@ def main():
     args = parser.parse_args()
 
     formatters = [
-        {'format': generator.Formatter.Join().format, 'weight': 2},
-        {'format': generator.Formatter.Underscore().format, 'weight': 2},
-        {'format': generator.Formatter.Capitalize().format, 'weight': 2},
-        {'format': generator.Formatter.CapitalizeExceptFirst().format,
+        {'format': usernamegen.Formatter.Join().format, 'weight': 2},
+        {'format': usernamegen.Formatter.Underscore().format, 'weight': 2},
+        {'format': usernamegen.Formatter.Capitalize().format, 'weight': 2},
+        {'format': usernamegen.Formatter.CapitalizeExceptFirst().format,
          'weight': 2},
-        {'format': generator.Formatter.AppendNumber().format, 'weight': 1},
-        {'format': generator.Formatter.CapitalizeAppendNumber().format,
+        {'format': usernamegen.Formatter.AppendNumber().format, 'weight': 1},
+        {'format': usernamegen.Formatter.CapitalizeAppendNumber().format,
          'weight': 1}
     ]
 
@@ -32,7 +32,7 @@ def main():
     words = data.split("\n")
     file.close()
 
-    gen = generator.Generator(words, args.prev_num, args.min)
+    gen = usernamegen.Generator(words, args.prev_num, args.min)
     gen.setFormatters(formatters)
     for i in range(0, args.n):
         print gen.getString()

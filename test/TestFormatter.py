@@ -1,5 +1,5 @@
 from nose.tools import assert_equal
-from generator import Formatter
+from usernamegen import Formatter
 import re
 
 
