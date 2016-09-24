@@ -9,7 +9,8 @@ except(IOError, ImportError):
 
 setup(
     name='usernamegen',
-    packages=['usernamegen'],
+    packages=['usernamegen', 'usernamegen.Formatter'],
+    scripts=['bin/markov', 'bin/username'],
     version=__version__,
     description='Genrate usernames with a Markov chain based on a wordlist',
     long_description=long_description,
