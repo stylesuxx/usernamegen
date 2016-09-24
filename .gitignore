@@ -5,3 +5,4 @@ nosetests.json
 dist
 *.egg-info
 venv
+build

@@ -3,9 +3,41 @@
 
 [![Build Status](https://travis-ci.org/stylesuxx/usernamegen.svg?branch=master)](https://travis-ci.org/stylesuxx/usernamegen) [![Downloads](https://img.shields.io/pypi/dm/browserinfo.svg)](https://img.shields.io/pypi/dm/usernamegen.svg)
 
-## Usage library
+## Wordlist
+In order to get the most out of the word generation, make sure that you have one word per line, all lower case.
 
-## Usage scripts
+## Installation
+Simply install via pip:
+
+    pip install usernamegen
+
+## Usage
+### Library
+You can use the usernamegen directly in your python application.
+```bash
+>>> import usernamegen
+>>> words = ['foo', 'foobar', 'foobarbla', 'foobarblafasel']
+>>> formatters = [{'format': usernamegen.Formatter.Join, 'weight': 1}]
+>>> minLength = 8
+>>> size = 3
+>>> gen = usernamegen.Generator(words, size, minLength)
+>>> gen.setFormatters(formatters)
+>>> gen.getString()
+'foobarfoobarblafasel'
+```
+
+When multiple formmatters are used, the heigher the weight of a formatter the more likely it is, that it is used.
+
+The following formatters are available:
+
+* Join
+* Underscore
+* Capitalize
+* CapitalizeExceptFirst
+* AppendNumber
+* CapitalizeAppendNumber
+
+### Scripts
 After installation there will be two script available:
 
 #### markov
