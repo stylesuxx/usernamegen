@@ -4,3 +4,4 @@ nosetests.json
 .coverage
 dist
 *.egg-info
+venv
