@@ -5,10 +5,6 @@ import random
 class Formatter:
     __metaclass__ = ABCMeta
 
-    @abstractproperty
-    def name(self):
-        raise NotImplementedError
-
     @abstractmethod
     def transform(self, words):
         raise NotImplementedError
@@ -18,30 +14,22 @@ class Formatter:
 
 
 class Join(Formatter):
-    name = 'Join'
-
     def transform(self, words):
         return words
 
 
 class Underscore(Formatter):
-    name = 'Underscore'
-
     def transform(self, words):
         return list(''.join(l + '_' * (n < len(words) - 1)
                     for n, l in enumerate(words)))
 
 
 class Capitalize(Formatter):
-    name = 'Capitalize'
-
     def transform(self, words):
         return map(lambda word: word.capitalize(), words)
 
 
 class CapitalizeExceptFirst(Formatter):
-    name = 'CapitalizeExceptFirst'
-
     def transform(self, words):
         words = Capitalize().transform(words)
         words[0] = words[0][:1].lower() + words[0][1:]
@@ -49,8 +37,6 @@ class CapitalizeExceptFirst(Formatter):
 
 
 class AppendNumber(Formatter):
-    name = 'Append Number'
-
     def transform(self, words):
         last = words.pop()
         if len(last) is 4:
@@ -63,8 +49,6 @@ class AppendNumber(Formatter):
 
 
 class CapitalizeAppendNumber(Formatter):
-    name = 'Capitalize Append Number'
-
     def transform(self, words):
         words = Capitalize().transform(words)
         words = AppendNumber().transform(words)

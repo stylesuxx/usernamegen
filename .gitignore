@@ -1,2 +1,6 @@
 *.pyc
 *.txt
+nosetests.json
+.coverage
+dist
+*.egg-info

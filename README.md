@@ -1,0 +1,45 @@
+# usernamegen
+> Genrate usernames with a Markov chain based on a wordlist
+
+[![Build Status](https://travis-ci.org/stylesuxx/usernamegen.svg?branch=master)](https://travis-ci.org/stylesuxx/usernamegen) [![Downloads](https://img.shields.io/pypi/dm/browserinfo.svg)](https://img.shields.io/pypi/dm/usernamegen.svg)
+
+## Usage library
+
+## Usage scripts
+After installation there will be two script available:
+
+#### markov
+```bash
+usage: markov [-h] [-p PREV] [-n N] WORDLIST
+
+Markov chain word generator. Generate new words based on aword list.
+
+positional arguments:
+  WORDLIST    Path to wordlist used for word generation
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -p PREV     Number of previous letters to base chain on
+  -n N        Amount of new words to generate
+```
+
+#### username
+```bash
+usage: username [-h] [-p PREV] [-n N] [-m MIN] WORDLIST
+
+Generate usernames based on a wordlist and a Markov chain.
+
+positional arguments:
+  WORDLIST    Path to wordlist used for word generation
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -p PREV     Number of previous letters to base chain on
+  -n N        Amount of new words to generate
+  -m MIN      Minimum username length
+```
+
+## Running tests
+```bash
+nosetests --with-coverage --cover-package=usernamegen --with-json-extended
+```
