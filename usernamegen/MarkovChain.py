@@ -19,12 +19,11 @@ class MarkovChain:
         return lookup
 
     def _tuples(self, word):
-        if len(word) < self.size - 1:
-            return
-
-        word = word + "\n"
-        for i in range(len(word) - self.size):
-            yield (word[i:i + self.size], word[i + self.size])
+        word = word.strip()
+        if len(word) >= self.size:
+            word = word + "\n"
+            for i in range(len(word) - self.size):
+                yield(word[i:i + self.size], word[i + self.size])
 
     def getWord(self):
         key = random.choice(self.starts)
