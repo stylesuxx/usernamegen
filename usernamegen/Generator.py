@@ -35,4 +35,4 @@ class Generator():
         except IndexError:
             raise Exception('At least one formatter needs to be provided')
 
-        return formatter(words)
+        return formatter().format(words)

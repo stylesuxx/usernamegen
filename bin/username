@@ -19,14 +19,12 @@ def main():
     args = parser.parse_args()
 
     formatters = [
-        {'format': usernamegen.Formatter.Join().format, 'weight': 2},
-        {'format': usernamegen.Formatter.Underscore().format, 'weight': 2},
-        {'format': usernamegen.Formatter.Capitalize().format, 'weight': 2},
-        {'format': usernamegen.Formatter.CapitalizeExceptFirst().format,
-         'weight': 2},
-        {'format': usernamegen.Formatter.AppendNumber().format, 'weight': 1},
-        {'format': usernamegen.Formatter.CapitalizeAppendNumber().format,
-         'weight': 1}
+        {'format': usernamegen.Formatter.Join, 'weight': 2},
+        {'format': usernamegen.Formatter.Underscore, 'weight': 2},
+        {'format': usernamegen.Formatter.Capitalize, 'weight': 2},
+        {'format': usernamegen.Formatter.CapitalizeExceptFirst, 'weight': 2},
+        {'format': usernamegen.Formatter.AppendNumber, 'weight': 1},
+        {'format': usernamegen.Formatter.CapitalizeAppendNumber, 'weight': 1}
     ]
 
     file = open(args.path)
