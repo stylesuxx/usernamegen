@@ -22,7 +22,7 @@ You can use the usernamegen directly in your python application.
 >>> size = 3
 >>> gen = usernamegen.Generator(words, size, minLength)
 >>> gen.setFormatters(formatters)
->>> gen.getString()
+>>> gen.getUsername()
 'foobarfoobarblafasel'
 ```
 

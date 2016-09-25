@@ -36,7 +36,7 @@ def main():
     gen = usernamegen.Generator(words, args.prev, args.min)
     gen.setFormatters(formatters)
     for i in range(0, args.n):
-        print gen.getString()
+        print gen.getUsername()
 
 if __name__ == '__main__':
     main()

@@ -9,7 +9,7 @@ class TestGenerator:
     def test_raise_exception_without_formatter(self):
         minLength = 8
         gen = usernamegen.Generator(words, 3, minLength)
-        string = gen.getString()
+        string = gen.getUsername()
 
     def test_check_min_length(self):
         minLength = 8
@@ -17,6 +17,6 @@ class TestGenerator:
         formatters = [{'format': usernamegen.Formatter.Join, 'weight': 2}]
         gen = usernamegen.Generator(words, 3, minLength)
         gen.setFormatters(formatters)
-        string = gen.getString()
+        string = gen.getUsername()
 
         assert len(string) >= 8

@@ -49,7 +49,7 @@ class Generator():
             for j in range(0, formatter['weight']):
                 self.formatters.append(formatter['format'])
 
-    def getString(self):
+    def getUsername(self):
         """Return a randomly generated username.
 
         :return: Randomly generated username
