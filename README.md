@@ -1,7 +1,7 @@
 # usernamegen
 > Genrate usernames with a Markov chain based on a wordlist
 
-[![Build Status](https://travis-ci.org/stylesuxx/usernamegen.svg?branch=master)](https://travis-ci.org/stylesuxx/usernamegen) [![Downloads](https://img.shields.io/pypi/dm/browserinfo.svg)](https://img.shields.io/pypi/dm/usernamegen.svg)
+[![Build Status](https://travis-ci.org/stylesuxx/usernamegen.svg?branch=master)](https://travis-ci.org/stylesuxx/usernamegen) [![Downloads](https://img.shields.io/pypi/dm/browserinfo.svg)](https://img.shields.io/pypi/dm/usernamegen.svg) [![Documentation Status](https://readthedocs.org/projects/usernamegen/badge/?version=latest)](http://sync.readthedocs.io/?badge=latest)
 
 ## Wordlist
 In order to get the most out of the word generation, make sure that you have one word per line, all lower case.
