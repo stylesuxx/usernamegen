@@ -1,8 +1,18 @@
+"""Implementation of a Markov chain."""
 import random
 
 
 class MarkovChain:
+    """Markov chain."""
+
     def __init__(self, words, size):
+        """Initialize Markov chain with a list of words and a size.
+
+        :param words: List of words
+        :type words: list
+        :param size: Letters that need to match
+        :type size: int
+        """
         self.size = size
         self.starts = map(lambda word: word[:self.size], words)
         self.lookup = self._buildLookupTable(words)
@@ -27,6 +37,11 @@ class MarkovChain:
                 yield(word[i:i + self.size], word[i + self.size])
 
     def getWord(self):
+        """Get a word.
+
+        :returns: A generated word
+        :rtype: str
+        """
         key = random.choice(self.starts)
         word = key
         try:
