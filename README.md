@@ -75,3 +75,9 @@ optional arguments:
 ```bash
 nosetests --with-coverage --cover-package=usernamegen --with-json-extended
 ```
+
+## Generating Documentation
+```bash
+sphinx-apidoc -o docs/source usernamegen -f
+cd docs && make html && cd ..
+```
