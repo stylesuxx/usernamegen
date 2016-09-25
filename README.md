@@ -20,7 +20,7 @@ You can use the usernamegen directly in your python application.
 >>> formatters = [{'format': usernamegen.Formatter.Join, 'weight': 1}]
 >>> minLength = 8
 >>> size = 3
->>> gen = usernamegen.Generator(words, size, minLength)
+>>> gen = usernamegen.Usernamegen(words, size, minLength)
 >>> gen.setFormatters(formatters)
 >>> gen.getUsername()
 'foobarfoobarblafasel'

@@ -3,7 +3,7 @@ from MarkovChain import MarkovChain
 import random
 
 
-class Generator():
+class Usernamegen():
     """Generates random usernames based on a wordlist and formatters."""
 
     def __init__(self, words, size, min):

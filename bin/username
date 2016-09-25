@@ -33,7 +33,7 @@ def main():
     words = data.split("\n")
     file.close()
 
-    gen = usernamegen.Generator(words, args.prev, args.min)
+    gen = usernamegen.Usernamegen(words, args.prev, args.min)
     gen.setFormatters(formatters)
     for i in range(0, args.n):
         print gen.getUsername()
